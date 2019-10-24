@@ -65,7 +65,7 @@ print(result1, result2)
 ==> 0.35089172119045514 0.35089172119045514
 ```
 
-Note that objects returned by `map` and `filter` are iterators, which means that their values aren't stored but generated as needed. After you've called `sum(diffs)`, `diffs` becomes empty. If you want to keep all elements in `diffs`, convert it to a list using `list(diffs)`.
+Note that objects returned by `map` and `filter` are iterators, which means that their values aren't stored but generated as needed. After you've called `sum(diffs)`, `diffs` become empty. If you want to keep all elements in `diffs`, convert it to a list using `list(diffs)`.
 
 `filter(fn, iterable)` works the same way as `map`, except that `fn` returns a boolean value and `filter` returns all the elements of the `iterable` for which the `fn` returns True.
 
@@ -98,7 +98,7 @@ print(product)
 
 ### Note on the performance of lambda functions
 
-Lambda functions are meant for one time use. Each time `lambda x: dosomething(x)` is called, the function has to be created, which hurts the performance if you call `lambda x: dosomething(x)` multiple times (e.g. when you pass it inside `reduce`).
+Lambda functions are meant for one-time use. Each time `lambda x: dosomething(x)` is called, the function has to be created, which hurts the performance if you call `lambda x: dosomething(x)` multiple times (e.g. when you pass it inside `reduce`).
 
 When you assign a name to the lambda function as in `fn = lambda x: dosomething(x)`, its performance is slightly slower than the same function defined using `def`, but the difference is negligible. See [here](https://stackoverflow.com/questions/26540885/lambda-is-slower-than-function-call-in-python-why).
 
@@ -143,7 +143,7 @@ print(elems[::-1])
 
 ==> [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
 ```
-The syntax `[x:y:z]` means \"take every `z`th element of a list from index `x` to index `y`\". When `z` is negative, it indicates going backwards. When `x` isn't specified, it defaults to the first element of the list in the direction you are traversing the list. When `y` isn't specified, it defaults to the last element of the list. So if we want to take every 2th element of a list, we use `[::2]`.
+The syntax `[x:y:z]` means \"take every `z`th element of a list from index `x` to index `y`\". When `z` is negative, it indicates going backwards. When `x` isn't specified, it defaults to the first element of the list in the direction you are traversing the list. When `y` isn't specified, it defaults to the last element of the list. So if we want to take every 2nd element of a list, we use `[::2]`.
 
 ```python
 evens = elems[::2]
@@ -289,7 +289,7 @@ for ngram in ngrams_generator:
 Note that to create slices, we use `(tokens[...] for i in range(n))` instead of `[tokens[...] for i in range(n)]`. `[]` is the normal list comprehension that returns a list. `()` returns a generator.
 
 ## 3. Classes and magic methods
-In Python, magic methods are prefixed and suffixed with the double underscore `__`, also known as dunder. The most wellknown magic method is probably `__init__`.
+In Python, magic methods are prefixed and suffixed with the double underscore `__`, also known as dunder. The most well-known magic method is probably `__init__`.
 
 ```python
 class Node:
